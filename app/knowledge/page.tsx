@@ -58,10 +58,10 @@ const articles = [
 
 interface Article {
   id: number;
-    title: string;
-    category: string;
-    readTime: string;
-    content: string;
+  title: string;
+  category: string;
+  readTime: string;
+  content: string;
 }
 
 export default function KnowledgePage() {
@@ -102,7 +102,7 @@ export default function KnowledgePage() {
                 ) : <div />}
                 {nextIdx < articles.length ? (
                   <button onClick={() => setActiveArticle(articles[nextIdx])} className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700">
-                    下一篇 <ArrowRight className="w-4 h-4" />
+                    下一篇<ArrowRight className="w-4 h-4" />
                   </button>
                 ) : <div />}
               </div>

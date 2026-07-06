@@ -71,7 +71,7 @@ export default function ProductsPage() {
 
           <div className="text-center mt-16">
             <Link href="/workspace" className="btn-primary flex items-center gap-2 mx-auto">
-              开始使用 <ArrowRight className="w-4 h-4" />
+              开始使用<ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "30TAI · AI 芯片协同开发平台",
+  title: "30TAI AI 芯片协同开发平台",
   description: "基于 AI 协同的复旦微 30TAI 开发板全栈开发平台",
 };
 

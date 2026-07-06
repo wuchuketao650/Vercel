@@ -1,4 +1,5 @@
-﻿import { User, Bot, GitCommit, CheckCircle, ArrowRight, FileText, Cpu, Brain, Code2 } from "lucide-react";
+﻿"use client";
+import { User, Bot, GitCommit, CheckCircle, ArrowRight, FileText, Cpu, Brain, Code2 } from "lucide-react";
 
 const steps = [
   { step: 1, title: "需求与 Spec", desc: "项目要求输入 → AI 辅助分析 → 基于 30TAI 知识库 → Spec 循序迭代", icon: FileText },
@@ -23,20 +24,22 @@ export function WorkflowSection() {
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">从需求到板上验证的完整开发闭环</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-4 gap-y-8 mb-24">
           {steps.map((s, i) => (
-            <div key={s.step} className="relative">
-              <div className="card text-center hover:-translate-y-1">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <s.icon className="w-5 h-5 text-blue-600" />
+            <div key={s.step} className="relative flex flex-col">
+              <div className="card h-full p-6 text-center hover:-translate-y-1 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <s.icon className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div className="text-xs text-blue-500 font-medium mb-1">步骤 {s.step}</div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-3">{s.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
                 </div>
-                <div className="text-xs text-blue-600 font-semibold mb-1">步骤 {s.step}</div>
-                <h3 className="font-semibold text-gray-900 mb-2">{s.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
               </div>
               {i < steps.length - 1 && (
-                <div className="hidden md:flex absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
-                  <ArrowRight className="w-5 h-5 text-blue-400/60" />
+                <div className="hidden md:flex absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                  <ArrowRight className="w-6 h-6 text-blue-400/40" />
                 </div>
               )}
             </div>
@@ -44,15 +47,17 @@ export function WorkflowSection() {
         </div>
 
         <div className="bg-gray-50 rounded-[22px] p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">角色分工</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">角色分工</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {roles.map((r, i) => (
-              <div key={i} className="card hover:-translate-y-1">
-                <div className={`w-10 h-10 ${r.color} rounded-xl flex items-center justify-center mb-4`}>
-                  <r.icon className="w-5 h-5 text-white" />
+              <div key={i} className="card p-6 hover:-translate-y-1 transition-all flex flex-col justify-between">
+                <div>
+                  <div className={`w-10 h-10 ${r.color} rounded-xl flex items-center justify-center mb-4`}>
+                    <r.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 className="font-bold text-lg text-gray-900 mb-2">{r.name}</h4>
+                  <p className="text-gray-600 text-sm">{r.role}</p>
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">{r.name}</h4>
-                <p className="text-gray-500 text-sm">{r.role}</p>
               </div>
             ))}
           </div>

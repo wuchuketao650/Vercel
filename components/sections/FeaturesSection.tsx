@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState } from "react";
 import { Cpu, Zap, Shield, Layers, Terminal, GitBranch } from "lucide-react";
 
